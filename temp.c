@@ -1,8 +1,23 @@
-#include<stdio.h>
-int main(){
+#include <stdio.h>
 
-printf("This is a temporary c program file");
+int fibonacci(int n) {
+    if (n <= 1) {
+        return n;
+    } else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
 
-return 0;
+int main() {
+    int n;
 
+    printf("Enter the number of terms you want in the Fibonacci series: ");
+    scanf("%d", &n);
+
+    printf("Fibonacci Series:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", fibonacci(i));
+    }
+
+    return 0;
 }
