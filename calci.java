@@ -1,24 +1,58 @@
 public class calci {
+
     public static void main(String[] args) {
-        // Check if exactly two arguments are provided
-        if (args.length != 2) {
-            System.out.println("Please provide two numbers as command line arguments.");
-            return;
+     
+        if (args.length < 3) {
+            System.out.println("Usage: java calci <operation> <operand1> <operand2>");
+            System.exit(1);
         }
 
-        // Parse the command line arguments to integers
-        try {
-            int num1 = Integer.parseInt(args[0]);
-            int num2 = Integer.parseInt(args[1]);
+        String operation = args[0];
+        double operand1 = Double.parseDouble(args[1]);
+        double operand2 = Double.parseDouble(args[2]);
+        double result = 0;
 
-            // Add the numbers
-            int sum = num1 + num2;
+        switch (operation.toLowerCase()) {
+            case "add":
+                result = sum(operand1, operand2);
+                break;
+            case "subtract":
+                result = diff(operand1, operand2);
+                break;
+            case "multiply":
+                result = multi(operand1, operand2);
+                break;
+            case "divide":
+                result = div(operand1, operand2);
+                break;
+            case "modulus":
+                result = mod(operand1, operand2);
+                break;
+            case "power":
+                result = Math.pow(operand1, operand2);
+                break;
+            case "sqrt":
+                result = sqrt(operand1);
+                break;
+            case "factorial":
+                result = factorial((int) operand1);
+                break;
+            default:
+                System.out.println("Error: Invalid operation.");
+                System.exit(1);
+        }
 
-            // Display the result
-            System.out.println("Sum of " + num1 + " and " + num2 + " is: " + sum);
-        } catch (NumberFormatException e) {
-            System.out.println("Please provide valid integers as command line arguments.");
+        System.out.println("Result: " + result);
+    }
+
+    private static int factorial(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
         }
     }
+
+    
 }
 
