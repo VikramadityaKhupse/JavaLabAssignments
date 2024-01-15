@@ -46,9 +46,15 @@ public class calci {
     public static void main(String[] args) {
      
 
+        
         String operation = args[0];
         double operand1 = Double.parseDouble(args[1]);
-        double operand2 = Double.parseDouble(args[2]);
+        double operand2 = 0;  
+
+        if (args.length == 3) {
+            operand2 = Double.parseDouble(args[2]);
+        }
+        
         double result = 0;
 
         switch (operation.toLowerCase()) {
@@ -71,6 +77,7 @@ public class calci {
                 result = Math.pow(operand1, operand2);
                 break;
             case "sqrt":
+      
                 result = sqrt(operand1);
                 break;
             case "factorial":
