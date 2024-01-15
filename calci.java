@@ -52,6 +52,13 @@ public class calci {
             return n * factorial(n - 1);
         }
     }
+    private static double sum(double n1, double n2) {
+        return n1 + n2;
+    }
+    private static double multi(double n1, double n2) {
+        return n1 * n2;
+    }
+
 
     
 }
