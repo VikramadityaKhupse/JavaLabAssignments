@@ -58,6 +58,18 @@ public class calci {
     private static double multi(double n1, double n2) {
         return n1 * n2;
     }
+    private static double diff(double n1, double n2) {
+        return n1 - n2;
+    }
+    private static double sqrt(double n1) {
+        if (n1 >= 0) {
+            return Math.sqrt(n1);
+        } else {
+            System.out.println("Error: Square root of a negative number is not allowed.");
+            System.exit(1);
+            return 0;  
+        }
+    }
 
 
     
