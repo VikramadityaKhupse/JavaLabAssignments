@@ -40,6 +40,12 @@ class SY2022bit052 {
     }
 
     private boolean year_check(String year) {
+        for(int i = 0; i < year.length(); i++){
+            if(!Character.isDigit(year.charAt(i))){
+
+                return false;
+            }
+        }
         int int_year = Integer.parseInt(year);
         return int_year >= 2000 && int_year <= 2024;
     }
