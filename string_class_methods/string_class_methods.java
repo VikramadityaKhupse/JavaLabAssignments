@@ -28,7 +28,7 @@ class StringMethodsExample {
         // compareTo(String anotherString)
         int compareResult = str.compareTo("Hello");
         System.out.println("compareTo(\"Hello\"): " + compareResult); // Output: 0
-import java.util.Arrays;
+
         // compareToIgnoreCase(String str)
         int ignoreCaseResult = str.compareToIgnoreCase("HELLO");
         System.out.println("compareToIgnoreCase(\"HELLO\"): " + ignoreCaseResult); // Output: 0
